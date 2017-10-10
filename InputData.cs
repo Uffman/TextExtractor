@@ -1,4 +1,4 @@
-﻿namespace PESRFullTextSearch
+﻿namespace TextExtractor
 {
     public class InputData
     {

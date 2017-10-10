@@ -1,6 +1,6 @@
-﻿namespace PESRFullTextSearch
+﻿namespace TextExtractor
 {
-    partial class Form1
+    partial class FrmMain
     {
         /// <summary>
         /// Required designer variable.
@@ -37,6 +37,9 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnStart = new System.Windows.Forms.Button();
             this.lblNumberOFiles = new System.Windows.Forms.Label();
+            this.pbProcessing = new System.Windows.Forms.ProgressBar();
+            this.bgWorker = new System.ComponentModel.BackgroundWorker();
+            this.lblProcessedFiles = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -66,9 +69,9 @@
             this.cbxRecursive.AutoSize = true;
             this.cbxRecursive.Location = new System.Drawing.Point(153, 24);
             this.cbxRecursive.Name = "cbxRecursive";
-            this.cbxRecursive.Size = new System.Drawing.Size(74, 17);
+            this.cbxRecursive.Size = new System.Drawing.Size(93, 17);
             this.cbxRecursive.TabIndex = 3;
-            this.cbxRecursive.Text = "Recursive";
+            this.cbxRecursive.Text = "Subdirectories";
             this.cbxRecursive.UseVisualStyleBackColor = true;
             // 
             // lblSourcePath
@@ -126,22 +129,45 @@
             // lblNumberOFiles
             // 
             this.lblNumberOFiles.AutoSize = true;
-            this.lblNumberOFiles.Location = new System.Drawing.Point(12, 170);
+            this.lblNumberOFiles.Location = new System.Drawing.Point(115, 140);
             this.lblNumberOFiles.Name = "lblNumberOFiles";
             this.lblNumberOFiles.Size = new System.Drawing.Size(80, 13);
             this.lblNumberOFiles.TabIndex = 9;
             this.lblNumberOFiles.Text = "Number of files:";
             // 
-            // Form1
+            // pbProcessing
+            // 
+            this.pbProcessing.Location = new System.Drawing.Point(12, 169);
+            this.pbProcessing.Name = "pbProcessing";
+            this.pbProcessing.Size = new System.Drawing.Size(350, 23);
+            this.pbProcessing.TabIndex = 11;
+            // 
+            // bgWorker
+            // 
+            this.bgWorker.WorkerReportsProgress = true;
+            // 
+            // lblProcessedFiles
+            // 
+            this.lblProcessedFiles.AutoSize = true;
+            this.lblProcessedFiles.Location = new System.Drawing.Point(115, 153);
+            this.lblProcessedFiles.Name = "lblProcessedFiles";
+            this.lblProcessedFiles.Size = new System.Drawing.Size(81, 13);
+            this.lblProcessedFiles.TabIndex = 12;
+            this.lblProcessedFiles.Text = "Processed files:";
+            // 
+            // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(750, 729);
+            this.BackColor = System.Drawing.SystemColors.Window;
+            this.ClientSize = new System.Drawing.Size(750, 461);
+            this.Controls.Add(this.lblProcessedFiles);
+            this.Controls.Add(this.pbProcessing);
             this.Controls.Add(this.lblNumberOFiles);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Form1";
+            this.Name = "FrmMain";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -162,6 +188,9 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Label lblNumberOFiles;
+        private System.Windows.Forms.ProgressBar pbProcessing;
+        private System.ComponentModel.BackgroundWorker bgWorker;
+        private System.Windows.Forms.Label lblProcessedFiles;
     }
 }
 
